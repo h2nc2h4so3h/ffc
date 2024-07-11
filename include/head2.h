@@ -1,1 +1,1 @@
-#define ROK "hit"
+#define ROK "histdddddddd"

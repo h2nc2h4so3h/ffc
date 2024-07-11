@@ -3,7 +3,5 @@
 
 int main()
 {
-	printf(MSG);
-	printf(ROK);
-	printf("hi\n");
+	printf("%d",foo());
 }
