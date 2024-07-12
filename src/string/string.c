@@ -1,0 +1,4 @@
+char getCh()
+{
+	return 'a';
+}

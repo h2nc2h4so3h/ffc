@@ -4,8 +4,8 @@ $(info [!] start make)
 #make lib
 
 BUILD_DIR=./build
-
-C_SRCS := $(addprefix ./src/,$(shell cd src && find -name '*.c' -printf '%f\n') )
+C_SRCS := $(patsubst ./%,./src/%,$(shell cd src && find -name '*.c' ) ) #-printf '%f\n'
+$(info $(C_SRCS))
 C_OBJS := $(C_SRCS:./src/%.c=$(BUILD_DIR)/%.o)
 C_DEPS := $(C_OBJS:.o=.d)
 
@@ -30,7 +30,7 @@ $(BUILD_DIR)/%.d : src/%.c
 .PHONY: clean
 
 clean:
-	-rm build/*
+	-rm -R build/*
 
 ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))
 $(info [!] include C_DEPS)
