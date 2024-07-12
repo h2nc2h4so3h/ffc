@@ -1,1 +1,2 @@
-#define ROK "histdddddddd"
+#define ROK "rokssss"
+int foo();

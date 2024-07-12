@@ -1,9 +1,6 @@
 #include "header.h"
 #include <stdio.h>
 
-int main()
-{
-	printf(MSG);
-	printf(ROK);
-	printf("hi\n");
+int foo(){
+	return 33;;
 }
