@@ -38,8 +38,15 @@ $(info [!] include C_DEPS)
 include $(C_DEPS)
 endif
 
-.PHONY: test
+.PHONY: gdb
+gdb:
+	$(MAKE) clean
+	$(MAKE) -$(MAKEFLAGS) CFLAGS=-g $(BUILD_DIR)/test
+	gdb ./build/test
 
+
+.PHONY: test
+# вообще тесты надо сделать так, чтобы прогнялись паралельно если их много
 test: $(BUILD_DIR)/test
 	@echo '[!] test start'
 	@./$(BUILD_DIR)/test
